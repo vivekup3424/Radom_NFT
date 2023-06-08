@@ -1,0 +1,16 @@
+8th June 14:51
+Token URI is used to access off-chain stores memory-intensive files/binaries.
+You can use IPFS to store offchain data, store the metadata on onchain like Token_URI.
+
+General Steps for NFT :-
+1.Get IPFS
+2.Add token URI Json file to IPFS
+3.Add IFPS URI to your NFT URI
+
+Read some articles on NFT by chainlink
+
+Having your attributes o-chain is going to allow you to make creative NFTs.
+
+8th June 20:44
+Till now I have made a bare-minimum NFT, but I need this Token_URI
+Token_URI returns a json-metadata, which contains the url to the image of the NFT.
