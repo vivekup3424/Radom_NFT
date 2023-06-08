@@ -14,3 +14,7 @@ Having your attributes o-chain is going to allow you to make creative NFTs.
 8th June 20:44
 Till now I have made a bare-minimum NFT, but I need this Token_URI
 Token_URI returns a json-metadata, which contains the url to the image of the NFT.
+
+21:32
+After setting up the Token_URI() function I am going to write the deploy script for the 
+BasicNFT contract.
