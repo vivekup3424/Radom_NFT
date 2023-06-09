@@ -18,3 +18,10 @@ Token_URI returns a json-metadata, which contains the url to the image of the NF
 21:32
 After setting up the Token_URI() function I am going to write the deploy script for the 
 BasicNFT contract.
+add the TOKEN_URI,
+add the deploy script
+add verify script for all contracts
+add updated helper.hardhat.config with sepolia ethUsdPriceFeed information
+
+Read the article of Chainlink on how to get a random number
+docs.chain.link/docs/get-a-random-number

@@ -5,6 +5,7 @@ import "hardhat-gas-reporter";
 import "dotenv/config";
 import "hardhat-deploy"; //namedAccounts comes from here
 import "@nomicfoundation/hardhat-toolbox";
+//import "hardhat-console";
 //import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
 

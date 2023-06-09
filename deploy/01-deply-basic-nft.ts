@@ -10,6 +10,7 @@ const deployBasicNFT: DeployFunction = async (
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
     const chainId = network.config.chainId;
+    log("------------------------------------------");
     const basicNFT = await deploy("BasicNFT", {
         from: deployer,
         args: [],
@@ -17,8 +18,10 @@ const deployBasicNFT: DeployFunction = async (
         waitConfirmations: 1,
     });
     if (!developmentChains.includes(network.name) && ETHERSCAN_API_KEY) {
+        log("Verifying the contract");
         await verify(basicNFT.address, []);
     }
+    log("----------------------------------------------");
 };
 export default deployBasicNFT;
 deployBasicNFT.tags = ["all", "basicNFT"];
