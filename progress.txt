@@ -25,3 +25,9 @@ add updated helper.hardhat.config with sepolia ethUsdPriceFeed information
 
 Read the article of Chainlink on how to get a random number
 docs.chain.link/docs/get-a-random-number
+
+21:00:32
+
+12th June 2023
+Goal - Finish Uptill 23:00:00
+* Request and receive lifecycle of chainlink smartcontract
