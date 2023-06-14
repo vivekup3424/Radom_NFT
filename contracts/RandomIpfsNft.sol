@@ -34,6 +34,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
 
     //NFT variables
     uint256 private tokenCounter = 0;
+    uint256 internal constant MAX_CHANCE_VALUE = 100;
 
     //Events
     event NftRequested(uint256 indexed requestId, address requester);
@@ -73,6 +74,34 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
         address dogOwner = requestIdToSender[requestId];
         uint256 newTokenId = tokenCounter++;
         _safeMint(dogOwner, newTokenId);
+        //using the rare NFT function and random chainlink VRF to assign an image to this unique NFT
+        uint256 moddedRng = randomWords[0] % MAX_CHANCE_VALUE; //moddedRng [0,99]
+        //7 - PUG [0,10)
+        //33 - SHIBA INU [10,40)
+        //55 - ST. BERNARD [40,100]
+    }
+
+    //mapping moddedRNG to breed
+    function getBreedFromModdedRng(
+        uint256 moddedRng
+    ) public pure returns (Breed breed) {
+        uint256 cumulativeSum = 0;
+        uint256[3] memory chanceArray = getChanceArray();
+        for (uint256 i = 0; i < chanceArray.length; i++) {
+            // Pug = 0 - 9  (10%)
+            // Shiba-inu = 10 - 39  (30%)
+            // St. Bernard = 40 = 99 (60%)
+            if (moddedRng >= cumulativeSum && moddedRng < chanceArray[i]) {
+                return Breed(i);
+            }
+            cumulativeSum = chanceArray[i];
+        }
+        revert RandomIpfsNft__RangeOutOfBounds();
+    }
+
+    //function to implement the rarity of docs
+    function getChanceArray() public pure returns (uint256[3] memory) {
+        return [10, 40, MAX_CHANCE_VALUE];
     }
 
     function tokenURI(

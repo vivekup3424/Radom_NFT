@@ -31,3 +31,8 @@ docs.chain.link/docs/get-a-random-number
 12th June 2023
 Goal - Finish Uptill 23:00:00
 * Request and receive lifecycle of chainlink smartcontract
+
+14th June 2023
+Implement the rare NFT function using the random number from Chainlink VRF,
+hence using the random number and mapping of chance number to breed to
+get the specific breed of the dog. 
